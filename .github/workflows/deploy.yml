@@ -31,11 +31,11 @@ jobs:
         # tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         # subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         
-      - name: Set Default Subscription
-        run: az account set --subscription <subscription-id>
+    #- name: Set Default Subscription
+    #   run: az account set --subscription <subscription-id>
 
-      - name: Azure Account List
-        run: az account list --output table
+    # - name: Azure Account List
+    #   run: az account list --output table
           
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
