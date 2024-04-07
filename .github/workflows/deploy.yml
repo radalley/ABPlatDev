@@ -1,0 +1,30 @@
+name: Deploy to Azure
+
+on: #event to trigger the workflow
+  push:
+    branches:
+      - main 
+
+jobs:
+  app-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'Dalley App'  # Replace with your Azure App Service name
+          package: .  # current directory
