@@ -36,6 +36,12 @@ jobs:
 
       - name: Azure Account List
         run: az account list --output table
+
+      - name: Check App Service Details
+        run: |
+          az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+          az webapp show --name "DalleyDevApp" --resource-group "dalleyRG"
+
           
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
