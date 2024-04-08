@@ -36,9 +36,6 @@ jobs:
 
       - name: Azure Account List
         run: az account list --output table
-        
-      - name: Azure group list
-        run: az group list --query "[].name" --output table
           
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
