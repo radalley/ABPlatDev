@@ -40,6 +40,6 @@ jobs:
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'Dalley App'  # Replace with your Azure App Service name
+          app-name: 'DalleyDevApp'  # Replace with your Azure App Service name
           package: .  # current directory
           slot-name: 'dalleyRG'
