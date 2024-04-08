@@ -42,4 +42,4 @@ jobs:
         with:
           app-name: 'DalleyDevApp'  # Replace with your Azure App Service name
           package: .  # current directory
-          slot-name: 'dalleyRG'
+          #slot-name: 'dalleyRG'
